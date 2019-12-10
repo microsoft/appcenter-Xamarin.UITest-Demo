@@ -4,8 +4,10 @@ languages:
 - csharp
 products:
 - dotnet
-description: "Add 150 character max description"
-urlFragment: "update-this-to-unique-url-stub"
+- Xamarin.UITest
+description: "Minimal Demonstration of Xamarin.UITest setup & functionality"
+urlFragment: "Android: https://docs.microsoft.com/en-us/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest
+iOS: https://docs.microsoft.com/en-us/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest"
 ---
 
 # Official Microsoft Sample

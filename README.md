@@ -2,22 +2,16 @@
 page_type: sample
 languages:
 - csharp
+- bash
 products:
+- App Center
+- Xamarin.UITest
 - dotnet
-description: "Add 150 character max description"
-urlFragment: "update-this-to-unique-url-stub"
+description: "Minimal Demonstration of Xamarin.UITest setup & functionality"
+urlFragment: "https://docs.microsoft.com/en-us/appcenter/test-cloud/uitest/"
 ---
 
 # Official Microsoft Sample
-
-<!-- 
-Guidelines on README format: https://review.docs.microsoft.com/help/onboard/admin/samples/concepts/readme-template?branch=master
-
-Guidance on onboarding samples to docs.microsoft.com/samples: https://review.docs.microsoft.com/help/onboard/admin/samples/process/onboarding?branch=master
-
-Taxonomies for products and languages: https://review.docs.microsoft.com/new-hope/information-architecture/metadata/taxonomies?branch=master
--->
-
 Give a short description for your sample here. What does it do and why is it important?
 
 ## Contents
@@ -27,11 +21,9 @@ Outline the file contents of the repository. It helps users navigate the codebas
 | File/folder       | Description                                |
 |-------------------|--------------------------------------------|
 | `src`             | Sample source code.                        |
-| `.gitignore`      | Define what to ignore at commit time.      |
-| `CHANGELOG.md`    | List of changes to the sample.             |
-| `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
+| `.gitignore`      | Define what to ignore at commit time.      |             
 | `README.md`       | This README file.                          |
-| `LICENSE`         | The license for the sample.                |
+| `LICENSE.md`      | The license for the sample.                |
 
 ## Prerequisites
 

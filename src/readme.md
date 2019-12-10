@@ -1,6 +1,3 @@
-# Build Status Badges
-- iOS App (simulator build) (master branch) - [![Build status](https://build.appcenter.ms/v0.1/apps/0165f989-7687-45c4-8495-fd1f3e22a728/branches/master/badge)](https://appcenter.ms)
-
 # Overview (Xamarin.UITest - Cross-Platform)
 This sample is designed for use in Visual Studio & includes the sourcecode for a Xamarin.Forms app on Android & iOS platforms & a Xamarin.UITest project. It also includes a precompiled APK & IPA incase you want to try only building, running and uploading Xamarin.UITest.
 
@@ -10,7 +7,7 @@ You can either build the entire solution, or you can just build the Xamarin.UITe
 ## Windows users
 Compared to running on Mac, Xamarin.UITests have additional requirements and limitations as follows:
 - Xamarin.UITest cannot be run locally against iOS apps in Windows, even if using a paired Mac capable of building iOS apps.
-- NUnitTestAdapter 2.1.1 is required to run tests locally in Windows. It is not required to run tests in Mac or tests submitted to Visual Studio App Center Test.
+- NUnit3TestAdapter is required to run tests locally in Windows. It is not required to run tests in Mac or tests submitted to Visual Studio App Center Test.
 - You must set the ANDROID_HOME enviroment variable to the main folder of your Android SDK. You can create this variable as follows:
     1. Go to **Control Panel > System > Advanced System Settings > Environment Variables > System Variables* > New…** 
     2. Name the variable `ANDROID_HOME` and set it to your Android SDK path. (For example `C:\Program Files (x86)\Android\android-sdk`, your location may vary.)

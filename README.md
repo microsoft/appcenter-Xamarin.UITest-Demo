@@ -2,12 +2,13 @@
 page_type: sample
 languages:
 - csharp
+- bash
 products:
-- dotnet
+- App Center
 - Xamarin.UITest
+- dotnet
 description: "Minimal Demonstration of Xamarin.UITest setup & functionality"
-urlFragment: "Android: https://docs.microsoft.com/en-us/appcenter/test-cloud/preparing-for-upload/xamarin-android-uitest
-iOS: https://docs.microsoft.com/en-us/appcenter/test-cloud/preparing-for-upload/xamarin-ios-uitest"
+urlFragment: "https://docs.microsoft.com/en-us/appcenter/test-cloud/uitest/"
 ---
 
 # Official Microsoft Sample
@@ -29,9 +30,7 @@ Outline the file contents of the repository. It helps users navigate the codebas
 | File/folder       | Description                                |
 |-------------------|--------------------------------------------|
 | `src`             | Sample source code.                        |
-| `.gitignore`      | Define what to ignore at commit time.      |
-| `CHANGELOG.md`    | List of changes to the sample.             |
-| `CONTRIBUTING.md` | Guidelines for contributing to the sample. |
+| `.gitignore`      | Define what to ignore at commit time.      |             
 | `README.md`       | This README file.                          |
 | `LICENSE`         | The license for the sample.                |
 

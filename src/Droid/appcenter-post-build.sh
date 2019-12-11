@@ -7,7 +7,7 @@
 # $API_KEY
 # $TEAM_APP
 # $DEVICE_SET
-UITEST_PATH='Xamarin.UITest/UITestDemo/UITestDemo.UITest'
+UITEST_PATH='src/UITestDemo.UITest'
 
 # DEBUGGING
 # echo "Hello World! I'm a post-build script!"
@@ -28,7 +28,7 @@ eval MSBuild $APPCENTER_SOURCE_DIRECTORY/$UITEST_PATH -v:q
 # ls $APPCENTER_SOURCE_DIRECTORY/$UITEST_PATH
 
 # Upload tests
-App_Center_Test_Command='appcenter test run uitest --app $TEAM_APP --devices $DEVICE_SET --app-path $APPCENTER_OUTPUT_DIRECTORY/com.companyname.UITestDemo.apk  --test-series "gh-$APPCENTER_BRANCH" --locale "en_US" --build-dir $APPCENTER_SOURCE_DIRECTORY/$UITEST_PATH/bin/Debug --async --token $API_KEY --uitest-tools-dir $APPCENTER_SOURCE_DIRECTORY/Xamarin.UITest/UITestDemo/packages/Xamarin.UITest.*/tools'
+App_Center_Test_Command='appcenter test run uitest --app $TEAM_APP --devices $DEVICE_SET --app-path $APPCENTER_OUTPUT_DIRECTORY/com.appcenter.UITestDemo.apk  --test-series "gh-$APPCENTER_BRANCH" --locale "en_US" --build-dir $APPCENTER_SOURCE_DIRECTORY/$UITEST_PATH/bin/Debug --async --token $API_KEY --uitest-tools-dir $APPCENTER_SOURCE_DIRECTORY/src/packages/Xamarin.UITest.*/tools'
 
 echo $App_Center_Test_Command
 eval $App_Center_Test_Command

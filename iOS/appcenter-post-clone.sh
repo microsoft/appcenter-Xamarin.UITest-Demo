@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # Comments
 
 echo "Hello World! I'm a post-clone script!"

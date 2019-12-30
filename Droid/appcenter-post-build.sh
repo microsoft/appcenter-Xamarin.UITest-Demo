@@ -9,7 +9,7 @@
 # $API_KEY
 # $TEAM_APP
 # $DEVICE_SET
-UITEST_PATH='src/UITestDemo.UITest'
+UITEST_PATH='UITestDemo.UITest'
 
 # DEBUGGING
 # echo "Hello World! I'm a post-build script!"

@@ -22,21 +22,17 @@ Compared to running on Mac, Xamarin.UITests have additional requirements and lim
   3. Close all instances of Visual Studio and reopen for the updated `ANDROID_HOME` to take effect.
 - You must use the `.ApkFile()` method to [point to the APK](UITestDemo.UITest/AppInitializer.cs#L30).
 
-## Running locally without building the Android/iOS apps
+## Running locally without building the iOS app
 
 You can run the UITest project locally without building the app projects by using precompiled files:
 
 1. Open "UITestDemo.UITest > AppInitializer.cs"
-2. Point to the app files:
-
-   - To use the precompiled APK, uncomment the line for '.ApkFile'
-   - To use the precompiled iOS simulator .app, unzip the app & uncomment the line for '.AppBundle'
+2. Point to the app file by unzip the app & uncomment the line for '.AppBundle'
      (You cannot use the precompiled IPA for local testing because it will not be signed for one of your devices. If you build the IPA for the project first though, you can install it on the device and point to it using '.InstalledApp'.)
 
 3. Build the Xamarin.UITest project.
 4. Running the tests differs slightly if you're using Visual Studio for Mac or Visual Studio on Windows:
-   - **VS for Mac** - Go to **View > Pads > Unit Tests > Run All**
-   - **VS for Windows** - Go to **Test > Windows > Test Explorer > Run All**. When testing on Windows, only Android is supported.
+   - **VS for Mac** - Go to **View > Pads > Unit Tests > Run All** (When testing on Windows, only Android is supported.)
 
 ## Running locally with building the Android/iOS apps
 

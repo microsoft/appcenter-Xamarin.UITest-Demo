@@ -27,7 +27,7 @@ Compared to running on Mac, Xamarin.UITests have additional requirements and lim
 You can run the UITest project locally without building the app projects by using precompiled files:
 
 1. Open "UITestDemo.UITest > AppInitializer.cs"
-2. Point to the app file by unzip the app & uncomment the line for '.AppBundle'
+2. To point to the app file, unzip the app located in the "precompiledApps" directory of the project & uncomment the line for '.AppBundle' in AppInitializer.cs
      (You cannot use the precompiled IPA for local testing because it will not be signed for one of your devices. If you build the IPA for the project first though, you can install it on the device and point to it using '.InstalledApp'.)
 
 3. Build the Xamarin.UITest project.

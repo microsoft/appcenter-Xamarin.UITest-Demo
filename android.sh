@@ -2,11 +2,11 @@
 
 # Setup & usage
 # Step 0 Build the UITest project & generate an APK using the "Release" configuration (or use the provided APK)
-# Step 1 Generate an AppCenter upload command and paste it to the variable
+# Step 1 Generate an AppCenter upload command and paste it to the variable 
 AppCenter_Test_Command='paste upload command here'
 
-# Step 2 Provide the (absolute or relative) path to the apk
-app_path='precompiledApps/com.companyname.UITestDemo.apk'
+# Step 2 Provide the (absolute or relative) path to the apk 
+app_path='precompiledApps/com.appcenter.UITestDemo.apk'
 
 # Step 3 Provide the (absolute or relative) path to the UITest project bin folder
 build_dir='UITestDemo.UITest/bin/Debug'

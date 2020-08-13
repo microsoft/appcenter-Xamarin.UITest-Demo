@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
 # Comments
+echo "app center version info test"
+eval cat $HOME/systeminfo.md
 
-echo "Hello World! I'm a post-clone script!"
+#echo "list home contents"
+#eval ls $HOME
 
-echo "I run immediately after your project has finished cloning."
-
-echo "Documentation: https://docs.microsoft.com/en-us/appcenter/build/custom/scripts/#post-clone"
-
-echo "end post-clone script"
+echo "contents of hostedtoolcache"
+eval ls $HOME/hostedtoolcache

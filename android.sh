@@ -5,7 +5,7 @@
 # Step 1 Generate an AppCenter upload command and paste it to the variable 
 AppCenter_Test_Command='paste upload command here'
 
-# Step 2 Provide the (absolute or relative) path to the apk 
+# Step 2 Provide the (absolute or relative) path to the apk
 app_path='precompiledApps/com.appcenter.UITestDemo.apk'
 
 # Step 3 Provide the (absolute or relative) path to the UITest project bin folder

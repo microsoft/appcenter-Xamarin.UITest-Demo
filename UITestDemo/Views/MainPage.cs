@@ -22,8 +22,8 @@ namespace UITestDemo
                     {
                         Title = "About"
                     };
-                    itemsPage.Icon = "tab_feed.png";
-                    aboutPage.Icon = "tab_about.png";
+                    itemsPage.IconImageSource = "tab_feed.png";
+                    aboutPage.IconImageSource = "tab_about.png";
                     break;
                 default:
                     itemsPage = new ItemsPage()

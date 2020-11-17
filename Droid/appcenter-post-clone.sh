@@ -2,7 +2,7 @@
 
 # Comments
 echo "app center version info to output folder"
-cp $HOME/systeminfo.md $APPCENTER_OUTPUT_DIRECTORY
+cp $HOME/systeminfo.md $APPCENTER_OUTPUT_DIRECTORY/systeminfo.md
 
 #echo "list home contents"
 #eval ls $HOME

@@ -30,7 +30,7 @@ eval MSBuild $APPCENTER_SOURCE_DIRECTORY/$UITEST_PATH -v:q
 # ls $APPCENTER_SOURCE_DIRECTORY/$UITEST_PATH
 
 # Upload tests
-App_Center_Test_Command='appcenter test run uitest --app $TEAM_APP --devices $DEVICE_SET --app-path $APPCENTER_OUTPUT_DIRECTORY/UITestDemo.ipa  --test-series "gh-$APPCENTER_BRANCH" --locale "en_US" --build-dir $APPCENTER_SOURCE_DIRECTORY/$UITEST_PATH/bin/Debug --async --token $API_KEY --uitest-tools-dir $APPCENTER_SOURCE_DIRECTORY/Xamarin.UITest/UITestDemo/packages/Xamarin.UITest.*/tools'
+App_Center_Test_Command='appcenter test run uitest --app $TEAM_APP --devices $DEVICE_SET --app-path $APPCENTER_OUTPUT_DIRECTORY/UITestDemo.ipa  --test-series "gh-$APPCENTER_BRANCH" --locale "en_US" --build-dir $APPCENTER_SOURCE_DIRECTORY/$UITEST_PATH/bin/Debug --async --token $API_KEY --uitest-tools-dir $APPCENTER_SOURCE_DIRECTORY/packages/Xamarin.UITest.*/tools'
 
 echo $App_Center_Test_Command
 eval $App_Center_Test_Command

@@ -40,12 +40,12 @@ namespace UITestDemo.UITest
                 // TODO: Update this path to point to your iOS app and uncomment the
                 // code if the app is not included in the solution. 
                 // The .AppBundle method is only supported for iOS simulators.
-                // .AppBundle ("../../../precompiledApps/UITestDemo.iOS.app")
+                // .AppBundle ("../../../precompiledApps/UITestDemo.app")
                 // 
                 // .InstalledApp requires you to build an IPA using the Debug 
                 // configuration & a valid provisioning profile, and preinstalling
                 // it on the target device.
-                // .InstalledApp("com.companyname.UITestDemo")
+                // .InstalledApp("com.appcenter.UITestDemo")
                 .StartApp();
         }
     }

@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Comments
-echo "app center version info to output folder"
-cp $HOME/systeminfo.md $APPCENTER_OUTPUT_DIRECTORY/systeminfo.md
+echo "app center version info"
+eval cat $HOME/systeminfo.md
 
 #echo "list home contents"
 #eval ls $HOME

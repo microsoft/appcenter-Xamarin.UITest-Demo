@@ -4,6 +4,7 @@
 # Step 0 Build the UITest project & generate an APK using the "Release" configuration (or use the provided APK)
 # Step 1 Generate an AppCenter upload command and paste it to the variable
 AppCenter_Test_Command='paste upload command here'
+
 # Debugging upload command 
 # AppCenter_Test_Command='appcenter test run uitest --app "XTCTeam/Kent-G.-UITestDemo" --devices "XTCTeam/10-11-pixels-and-motorolas" --app-path pathToFile.apk --test-series "main-local" --locale "en_US" --build-dir pathToUITestBuildDir'
 

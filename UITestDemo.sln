@@ -11,9 +11,17 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITestDemo.UITest", "UITestDemo.UITest\UITestDemo.UITest.csproj", "{912248EA-0FED-48E1-8994-6C3080551B2C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "upload scripts", "upload scripts", "{18CBDE2C-B150-4C7E-B99F-B1569ED96CB9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "android", "android", "{041C74E4-0183-4AA4-A60F-CEF9E836F957}"
 	ProjectSection(SolutionItems) = preProject
 		android.sh = android.sh
+		Droid\appcenter-post-build.sh = Droid\appcenter-post-build.sh
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ios", "ios", "{5034E7A4-7C94-4AE3-B0B5-737AB0D2A0A9}"
+	ProjectSection(SolutionItems) = preProject
 		ios.sh = ios.sh
+		iOS\appcenter-post-build.sh = iOS\appcenter-post-build.sh
 	EndProjectSection
 EndProject
 Global
@@ -74,5 +82,9 @@ Global
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {63409134-6C45-425B-B5D5-F645B9FB3D3D}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{041C74E4-0183-4AA4-A60F-CEF9E836F957} = {18CBDE2C-B150-4C7E-B99F-B1569ED96CB9}
+		{5034E7A4-7C94-4AE3-B0B5-737AB0D2A0A9} = {18CBDE2C-B150-4C7E-B99F-B1569ED96CB9}
 	EndGlobalSection
 EndGlobal

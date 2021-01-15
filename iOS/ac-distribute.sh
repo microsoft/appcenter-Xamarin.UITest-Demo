@@ -6,20 +6,23 @@
 # $APPCENTER_BRANCH
 
 # Custom Environment Variables set in Build configuration
-# $API_KEY
-# $DEVICE_SET
-# $DISTRIBUTION_GROUP
-# $TEAM_APP => OWNER_NAME + APP_NAME
+# $API_TOKEN 
 # $APP_PACKAGE
-# $CONTENT_TYPE
+# $APP_NAME 
+# $OWNER_NAME
+# $TEAM_APP = $OWNER_NAME/$APP_NAME
+# $CONTENT_TYPE for 
+#   Android: "application/vnd.android.package-archive"
+#   iOS: "application/octet-stream"
+# $DISTRIBUTION_GROUP
 
-# Vars to simplify repeated syntax
+# Vars to simplify frequently used syntax
 UPLOAD_DOMAIN="https://file.appcenter.ms/upload"
-API_URL="https://api.appcenter.ms/v0.1/apps/$OWNER_NAME/$APP_NAME"
-AUTH="X-API-Token: $API_KEY"
+API_URL="https://api.appcenter.ms/v0.1/apps/$TEAM_APP"
+AUTH="X-API-Token: $API_TOKEN"
 ACCEPT_JSON="Accept: application/json"
 
-# Body
+# Body - Step 1/7
 echo "Creating release (1/7)"
 request_url="$API_URL/uploads/releases"
 upload_json=$(curl -s -X POST -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" "$request_url")
@@ -31,9 +34,9 @@ url_encoded_token=$(echo $upload_json | jq -r '.url_encoded_token')
 file_name=$(basename $APP_PACKAGE)
 file_size=$(wc -c $APP_PACKAGE | awk '{print $1}')
 
+# Step 2/7
 echo "Creating metadata (2/7)"
 metadata_url="$UPLOAD_DOMAIN/set_metadata/$package_asset_id?file_name=$file_name&file_size=$file_size&token=$url_encoded_token&content_type=$CONTENT_TYPE"
-
 
 meta_response=$(curl -s -d POST -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" "$metadata_url")
 chunk_size=$(echo $meta_response | jq -r '.chunk_size')
@@ -44,6 +47,7 @@ echo $chunk_size
 split_dir=$APPCENTER_OUTPUT_DIRECTORY/split-dir
 split -b $chunk_size $APP_PACKAGE $split_dir/split
 
+# Step 3/7
 echo "Uploading chunked binary (3/7)"
 binary_upload_url="$UPLOAD_DOMAIN/upload_chunk/$package_asset_id?token=$url_encoded_token"
 
@@ -58,10 +62,12 @@ do
     printf "\n"
 done
 
+# Step 4/7
 echo "Finalising upload (4/7)"
 finish_url="$UPLOAD_DOMAIN/finished/$package_asset_id?token=$url_encoded_token"
 curl -d POST -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" "$finish_url"
 
+# Step 5/7
 echo "Commit release (5/7)"
 commit_url="$API_URL/uploads/releases/$releases_id"
 curl -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" \
@@ -75,6 +81,7 @@ release_id=null
 counter=0
 max_poll_attempts=15
 
+# Step 6/7
 echo "Polling for release id (6/7)"
 while [[ $release_id == null && ($counter -lt $max_poll_attempts)]]
 do
@@ -91,6 +98,7 @@ then
     exit 1
 fi
 
+# Step 7/7
 echo "Applying destination to release (7/7)"
 distribute_url="https://api.appcenter.ms/v0.1/apps/$OWNER_NAME/$APP_NAME/releases/$release_id"
 curl -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" \

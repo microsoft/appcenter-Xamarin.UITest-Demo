@@ -8,21 +8,25 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITestDemo.iOS", "iOS\UITes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITestDemo.Droid", "Droid\UITestDemo.Droid.csproj", "{3B2FE7A6-E04B-4A11-9872-9ED1FFA093A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITestDemo.UITest", "UITestDemo.UITest\UITestDemo.UITest.csproj", "{912248EA-0FED-48E1-8994-6C3080551B2C}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "upload scripts", "upload scripts", "{18CBDE2C-B150-4C7E-B99F-B1569ED96CB9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "android", "android", "{041C74E4-0183-4AA4-A60F-CEF9E836F957}"
 	ProjectSection(SolutionItems) = preProject
 		android.sh = android.sh
 		Droid\appcenter-post-build.sh = Droid\appcenter-post-build.sh
+		Droid\ac-distribute.sh = Droid\ac-distribute.sh
+		Droid\ac-test-run.sh = Droid\ac-test-run.sh
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ios", "ios", "{5034E7A4-7C94-4AE3-B0B5-737AB0D2A0A9}"
 	ProjectSection(SolutionItems) = preProject
 		ios.sh = ios.sh
 		iOS\appcenter-post-build.sh = iOS\appcenter-post-build.sh
+		iOS\ac-test-run.sh = iOS\ac-test-run.sh
+		iOS\ac-distribute.sh = iOS\ac-distribute.sh
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITestDemo.UITest", "UITestDemo.UITest\UITestDemo.UITest.csproj", "{912248EA-0FED-48E1-8994-6C3080551B2C}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

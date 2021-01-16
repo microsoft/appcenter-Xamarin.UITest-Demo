@@ -31,6 +31,8 @@ releases_id=$(echo $upload_json | jq -r '.id')
 package_asset_id=$(echo $upload_json | jq -r '.package_asset_id')
 url_encoded_token=$(echo $upload_json | jq -r '.url_encoded_token')
 
+echo "App package is: $APP_PACKAGE"
+
 file_name=$(basename $APP_PACKAGE)
 file_size=$(wc -c $APP_PACKAGE | awk '{print $1}')
 

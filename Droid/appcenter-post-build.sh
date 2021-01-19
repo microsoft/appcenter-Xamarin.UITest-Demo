@@ -28,7 +28,6 @@ else
 fi
 
 echo "WC Syntax experiment"
-wc -c '$APPCENTER_OUTPUT_DIRECTORY/com.appcenter.UITestDemo.apk'
-
+wc -c $APPCENTER_OUTPUT_DIRECTORY/com.appcenter.UITestDemo.apk
 
 echo "end post-build script"

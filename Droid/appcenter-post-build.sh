@@ -10,7 +10,7 @@
 # $TEAM_APP
 # $DEVICE_SET
 
-
+APP_PACKAGE=$(echo $APP_PACKAGE)
 
 #echo "Start Test upload script (ac-test-run.sh)"
 #sh ../ac-test-run.sh
@@ -20,14 +20,14 @@
 #sh ../ac-distribute.sh
 #echo "Finish Distribute script (ac-distribute.sh)"
 
-if test -f "$APPCENTER_OUTPUT_DIRECTORY/com.appcenter.UITestDemo.apk"
+if test -f "$APP_PACKAGE"
 then
-    echo "$APPCENTER_OUTPUT_DIRECTORY/com.appcenter.UITestDemo.apk exists."
+    echo "$APP_PACKAGE exists."
 else
-    echo "$APPCENTER_OUTPUT_DIRECTORY/com.appcenter.UITestDemo.apk doesn't exist'"
+    echo "$APP_PACKAGE doesn't exist'"
 fi
 
 echo "WC Syntax experiment"
-wc -c $APPCENTER_OUTPUT_DIRECTORY/com.appcenter.UITestDemo.apk
+wc -c $APP_PACKAGE
 
 echo "end post-build script"

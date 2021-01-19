@@ -10,7 +10,7 @@
 # $TEAM_APP
 # $DEVICE_SET
 
-APP_PACKAGE=$(echo $APP_PACKAGE)
+APP_PACKAGE=$('$APPCENTER_SOURCE_DIRECTORY/$APP_PACKAGE')
 
 #echo "Start Test upload script (ac-test-run.sh)"
 #sh ../ac-test-run.sh

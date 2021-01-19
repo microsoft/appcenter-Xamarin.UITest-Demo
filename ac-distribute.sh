@@ -31,12 +31,10 @@ releases_id=$(echo $upload_json | jq -r '.id')
 package_asset_id=$(echo $upload_json | jq -r '.package_asset_id')
 url_encoded_token=$(echo $upload_json | jq -r '.url_encoded_token')
 
-echo "App package is: $APP_PACKAGE"
+echo "WC Syntax experiment"
+wc -c $APP_PACKAGE
 
 file_name=$(basename $APP_PACKAGE)
-
-echo "File_name is: $file_name"
-
 file_size=$(wc -c $APP_PACKAGE | awk '{print $1}')
 
 # Step 2/7

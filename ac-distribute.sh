@@ -10,7 +10,7 @@
 # $APP_PACKAGE
 # $APP_NAME 
 # $OWNER_NAME
-# $TEAM_APP = $OWNER_NAME/$APP_NAME
+# $TEAM_APP = values for $OWNER_NAME/$APP_NAME
 # $CONTENT_TYPE for 
 #   Android: "application/vnd.android.package-archive"
 #   iOS: "application/octet-stream"

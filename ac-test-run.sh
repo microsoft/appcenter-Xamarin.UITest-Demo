@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo "App package is: $APP_PACKAGE"
 
 UITEST_PATH='UITestDemo.UITest'
 

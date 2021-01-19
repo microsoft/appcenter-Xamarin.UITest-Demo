@@ -20,15 +20,15 @@
 #sh ../ac-distribute.sh
 #echo "Finish Distribute script (ac-distribute.sh)"
 
-if test -f "$APP_PACKAGE"
+if test -f "$APPCENTER_OUTPUT_DIRECTORY/com.appcenter.UITestDemo.apk"
 then
-    echo "$APP_PACKAGE exists."
+    echo "$APPCENTER_OUTPUT_DIRECTORY/com.appcenter.UITestDemo.apk exists."
 else
-    echo "$APP_PACKAGE doesn't exist'"
+    echo "$APPCENTER_OUTPUT_DIRECTORY/com.appcenter.UITestDemo.apk doesn't exist'"
 fi
 
 echo "WC Syntax experiment"
-wc -c '$APP_PACKAGE'
+wc -c '$APPCENTER_OUTPUT_DIRECTORY/com.appcenter.UITestDemo.apk'
 
 
 echo "end post-build script"

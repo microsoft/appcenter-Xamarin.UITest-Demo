@@ -20,8 +20,11 @@
 #sh ../ac-distribute.sh
 #echo "Finish Distribute script (ac-distribute.sh)"
 
-if test -f "$APP_PACKAGE"; then
+if test -f "$APP_PACKAGE"
+then
     echo "$APP_PACKAGE exists."
+else
+    echo "$APP_PACKAGE doesn't exist'"
 fi
 
 echo "WC Syntax experiment"

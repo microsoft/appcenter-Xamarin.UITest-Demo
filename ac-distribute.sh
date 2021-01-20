@@ -105,7 +105,7 @@ fi
 echo "Applying destination to release (7/7)"
 distribute_url="https://api.appcenter.ms/v0.1/apps/$OWNER_NAME/$APP_NAME/releases/$release_id"
 curl -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" \
-  --data '{"destinations": [{ "name": "$DISTRIBUTION_GROUP"}] }' \
+  --data '{"destinations": [{ "name": "My device"}] }' \
   -X PATCH \
   $distribute_url
 

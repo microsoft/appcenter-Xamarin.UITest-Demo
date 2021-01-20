@@ -47,7 +47,8 @@ echo $meta_response
 echo $chunk_size
 
 split_dir=$APPCENTER_OUTPUT_DIRECTORY/split-dir
-eval split -b $chunk_size $APP_PACKAGE $split_dir/split
+mkdir -p $split_dir
+split -b $chunk_size $APP_PACKAGE $split_dir/split
 
 # Step 3/7
 echo "Uploading chunked binary (3/7)"

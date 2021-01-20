@@ -103,8 +103,9 @@ fi
 
 # Step 7/7
 echo "Applying destination to release (7/7)"
+DISTRIBUTION_GROUP=$(eval $DISTRIBUTION_GROUP)
 distribute_url="https://api.appcenter.ms/v0.1/apps/$OWNER_NAME/$APP_NAME/releases/$release_id"
-eval curl -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" \
+curl -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" \
   --data '{"destinations": [{ "name": "$DISTRIBUTION_GROUP"}] }' \
   -X PATCH \
   $distribute_url

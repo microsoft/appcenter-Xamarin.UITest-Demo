@@ -31,11 +31,10 @@ releases_id=$(echo $upload_json | jq -r '.id')
 package_asset_id=$(echo $upload_json | jq -r '.package_asset_id')
 url_encoded_token=$(echo $upload_json | jq -r '.url_encoded_token')
 
-echo "WC Syntax experiment"
-wc -c '$APP_PACKAGE'
+
 
 file_name=$(basename $APP_PACKAGE)
-file_size=$(wc -c $APP_PACKAGE | awk '{print $1}')
+file_size=$(eval wc -c $APP_PACKAGE | awk '{print $1}')
 
 # Step 2/7
 echo "Creating metadata (2/7)"
@@ -57,9 +56,9 @@ binary_upload_url="$UPLOAD_DOMAIN/upload_chunk/$package_asset_id?token=$url_enco
 block_number=1
 for i in $split_dir/*
 do
-    echo "start uploading chunk $f"
+    echo "start uploading chunk $i"
     url="$binary_upload_url&block_number=$block_number"
-    size=$(wc -c $f | awk '{print $1}')
+    size=$(wc -c $i | awk '{print $1}')
     curl -X POST $url --data-binary "@$i" -H "Content-Length: $size" -H "Content-Type: $CONTENT_TYPE"
     block_number=$(($block_number + 1))
     printf "\n"

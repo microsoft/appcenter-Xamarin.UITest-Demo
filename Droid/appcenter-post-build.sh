@@ -18,14 +18,14 @@
 #sh ../ac-distribute.sh
 #echo "Finish Distribute script (ac-distribute.sh)"
 
-if test -f $APP_PACKAGE
-then
-    echo "$APP_PACKAGE exists."
-else
-    echo "$APP_PACKAGE does not exist."
-fi
+#if test -f $APP_PACKAGE
+#then
+#    echo $APP_PACKAGE exists.
+#else
+#    echo $APP_PACKAGE does not exist.
+#fi
 
-echo "WC Syntax experiment"
-eval wc -c $APP_PACKAGE
+#echo "WC Syntax experiment"
+#eval wc -c $APP_PACKAGE
 
-echo "end post-build script"
+#echo "end post-build script"

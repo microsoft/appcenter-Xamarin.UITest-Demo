@@ -31,8 +31,6 @@ releases_id=$(echo $upload_json | jq -r '.id')
 package_asset_id=$(echo $upload_json | jq -r '.package_asset_id')
 url_encoded_token=$(echo $upload_json | jq -r '.url_encoded_token')
 
-
-
 file_name=$(basename $APP_PACKAGE)
 file_size=$(eval wc -c $APP_PACKAGE | awk '{print $1}')
 
@@ -78,8 +76,6 @@ curl -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" \
   -X PATCH \
   $commit_url
 
-release_status_url="$API_URL/uploads/releases/$releases_id"
-
 release_id=null
 counter=0
 max_poll_attempts=15
@@ -88,7 +84,7 @@ max_poll_attempts=15
 echo "Polling for release id (6/7)"
 while [[ $release_id == null && ($counter -lt $max_poll_attempts)]]
 do
-    poll_result=$(curl -s -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" $release_status_url)
+    poll_result=$(curl -s -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" $commit_url)
     release_id=$(echo $poll_result | jq -r '.release_distinct_id')
     echo $counter $release_id
     counter=$((counter + 1))
@@ -103,7 +99,7 @@ fi
 
 # Step 7/7
 echo "Applying destination to release (7/7)"
-distribute_url="https://api.appcenter.ms/v0.1/apps/$OWNER_NAME/$APP_NAME/releases/$release_id"
+distribute_url="$API_URL/releases/$release_id"
 curl -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" \
   --data '{"destinations": [{ "name": "'"$DISTRIBUTION_GROUP"'"}] }' \
   -X PATCH \

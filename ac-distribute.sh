@@ -76,12 +76,12 @@ curl -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" \
   -X PATCH \
   $commit_url
 
+# Step 6/7
+echo "Polling for release id (6/7)"
 release_id=null
 counter=0
 max_poll_attempts=15
 
-# Step 6/7
-echo "Polling for release id (6/7)"
 while [[ $release_id == null && ($counter -lt $max_poll_attempts)]]
 do
     poll_result=$(curl -s -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" $commit_url)

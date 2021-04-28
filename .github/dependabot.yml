@@ -1,0 +1,38 @@
+version: 2
+updates:
+- package-ecosystem: nuget
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "13:00"
+  ignore:
+  - dependency-name: Xamarin.AndroidX.Browser
+    versions:
+    - "> 1.2.0.2"
+  - dependency-name: Xamarin.AndroidX.Legacy.Support.Core.UI
+    versions:
+    - "> 1.0.0.6"
+  - dependency-name: Xamarin.AndroidX.Legacy.Support.V4
+    versions:
+    - "> 1.0.0.2, < 2"
+  - dependency-name: Xamarin.AndroidX.Media
+    versions:
+    - "> 1.2.0, < 2"
+  - dependency-name: Xamarin.Google.Android.Material
+    versions:
+    - "> 1.0.0.1, < 2"
+  - dependency-name: Xamarin.AndroidX.CardView
+    versions:
+    - 1.0.0.6
+  - dependency-name: Xamarin.AndroidX.CoordinatorLayout
+    versions:
+    - 1.1.0.6
+  - dependency-name: Xamarin.AndroidX.VectorDrawable.Animated
+    versions:
+    - 1.1.0.6
+  - dependency-name: Xamarin.AndroidX.VersionedParcelable
+    versions:
+    - 1.1.1.6
+  - dependency-name: Xamarin.AndroidX.CursorAdapter
+    versions:
+    - 1.0.0.6

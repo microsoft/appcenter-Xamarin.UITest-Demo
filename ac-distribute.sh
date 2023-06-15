@@ -38,7 +38,7 @@ file_size=$(eval wc -c $APP_PACKAGE | awk '{print $1}')
 echo "Creating metadata (2/7)"
 metadata_url="$UPLOAD_DOMAIN/set_metadata/$package_asset_id?file_name=$file_name&file_size=$file_size&token=$url_encoded_token&content_type=$CONTENT_TYPE"
 
-meta_response=$(curl -s -d POST -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" "$metadata_url")
+meta_response=$(curl -s -X POST -H "Content-Length: 0" -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" "$metadata_url")
 chunk_size=$(echo $meta_response | jq -r '.chunk_size')
 
 echo $meta_response
@@ -66,7 +66,7 @@ done
 # Step 4/7
 echo "Finalising upload (4/7)"
 finish_url="$UPLOAD_DOMAIN/finished/$package_asset_id?token=$url_encoded_token"
-curl -d POST -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" "$finish_url"
+curl -X POST -H "Content-Length: 0" -H "Content-Type: application/json" -H "$ACCEPT_JSON" -H "$AUTH" "$finish_url"
 
 # Step 5/7
 echo "Commit release (5/7)"
